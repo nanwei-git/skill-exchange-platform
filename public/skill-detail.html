@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>技能详情 · 技能交换平台</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <script src="/js/app.js" defer></script><script src="/js/skill-detail.js" defer></script>
+</head>
+<body>
+  <header class="site-header"><nav class="container nav"><a class="brand" href="/"><span class="brand-mark">EX</span><span>技能交换</span></a><div class="nav-links"><a href="/">发现技能</a><a data-auth-only hidden href="/skill-form.html">发布技能</a><a data-auth-only hidden href="/dashboard.html">个人中心</a><a data-guest-only href="/login.html">登录</a><button data-auth-only hidden data-logout>退出</button></div></nav></header>
+  <main class="container section">
+    <div id="detailMessage" class="message" hidden></div>
+    <div id="detailLoading" class="loading">正在加载技能详情…</div>
+    <div id="detailContent" class="detail-layout" hidden>
+      <article class="panel">
+        <div id="detailTags" class="card-top"></div>
+        <h1 id="detailTitle" class="detail-title"></h1>
+        <div id="detailOwner" class="user-line"></div>
+        <hr style="border:0;border-top:1px solid var(--line);margin:28px 0">
+        <h2>技能说明</h2><p id="detailDescription" class="detail-description"></p>
+        <div id="relatedWrap" hidden><hr style="border:0;border-top:1px solid var(--line);margin:28px 0"><h2>同类技能</h2><div id="relatedList" class="list"></div></div>
+      </article>
+      <aside class="detail-side">
+        <section class="panel"><h3>交换信息</h3><div id="detailValues" class="key-values"></div><div class="stack" style="margin-top:18px"><button id="favoriteButton" class="btn btn-secondary" type="button">收藏技能</button><button id="applyToggle" class="btn" type="button">发起交换</button></div></section>
+        <section id="applyPanel" class="panel" hidden><h3>提交交换申请</h3><form id="applyForm" class="stack"><div class="field"><label for="offerSkillId">我可以提供</label><select class="select" id="offerSkillId" required></select></div><div class="field"><label for="message">申请留言</label><textarea class="textarea" id="message" maxlength="500" placeholder="说明交换目的和时间安排"></textarea></div><button class="btn" type="submit">确认申请</button></form></section>
+      </aside>
+    </div>
+  </main>
+  <footer class="site-footer">课程项目演示 · 24002120509 杨庆鸿</footer>
+</body>
+</html>

@@ -1,0 +1,43 @@
+@baseUrl = http://localhost:3000
+@token = 请先执行登录并复制data.token
+
+### 1. 健康检查
+GET {{baseUrl}}/api/health
+
+### 2. 登录（演示密码统一为123456）
+POST {{baseUrl}}/api/auth/login
+Content-Type: application/json
+
+{
+  "username": "linxia",
+  "password": "123456"
+}
+
+### 3. 获取技能列表
+GET {{baseUrl}}/api/skills?page=1&limit=9&type=offer&sort=popular
+
+### 4. 获取当前用户
+GET {{baseUrl}}/api/auth/me
+Authorization: Bearer {{token}}
+
+### 5. 发布技能
+POST {{baseUrl}}/api/skills
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "categoryId": 1,
+  "type": "offer",
+  "title": "Express API 入门",
+  "description": "一起完成一个包含路由、控制器和服务层的接口练习。",
+  "locationType": "online",
+  "coverUrl": ""
+}
+
+### 6. 获取个人统计
+GET {{baseUrl}}/api/stats/me
+Authorization: Bearer {{token}}
+
+### 7. 查看通知
+GET {{baseUrl}}/api/notifications
+Authorization: Bearer {{token}}

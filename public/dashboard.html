@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>个人中心 · 技能交换平台</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <script src="/js/app.js" defer></script><script src="/js/dashboard.js" defer></script>
+</head>
+<body>
+  <header class="site-header"><nav class="container nav"><a class="brand" href="/"><span class="brand-mark">EX</span><span>技能交换</span></a><div class="nav-links"><a href="/">发现技能</a><a href="/skill-form.html">发布技能</a><button data-logout>退出</button></div></nav></header>
+  <main class="container section">
+    <div class="section-head"><div><p class="eyebrow">MY DASHBOARD</p><h1>个人中心</h1><p id="welcomeText">管理资料、技能和交换进度。</p></div><a class="btn" href="/skill-form.html">发布新技能</a></div>
+    <div id="dashboardMessage" class="message" hidden></div>
+    <div class="dashboard">
+      <aside class="dashboard-nav" aria-label="个人中心导航">
+        <button class="active" data-tab="overview">数据概览</button><button data-tab="profile">个人资料</button><button data-tab="skills">我的技能</button><button data-tab="exchanges">交换申请</button><button data-tab="favorites">我的收藏</button><button data-tab="notifications">通知中心</button><button data-tab="reviews">我的评价</button>
+      </aside>
+      <div>
+        <section id="tab-overview" class="dashboard-section active"><div id="statsGrid" class="stat-grid"><div class="loading">加载统计中…</div></div><div class="panel" style="margin-top:18px"><h2>推荐给你</h2><div id="recommendations" class="card-grid"></div></div></section>
+        <section id="tab-profile" class="dashboard-section panel"><h2>个人资料</h2><form id="profileForm" class="form-grid"><div class="field"><label for="profileUsername">用户名</label><input class="input" id="profileUsername" disabled></div><div class="field"><label for="profileEmail">邮箱</label><input class="input" id="profileEmail" type="email" required></div><div class="field"><label for="profilePhone">手机号</label><input class="input" id="profilePhone"></div><div class="field"><label for="profileAvatar">头像 URL</label><input class="input" id="profileAvatar" type="url"></div><div class="field full"><label for="profileBio">个人简介</label><textarea class="textarea" id="profileBio" maxlength="300"></textarea></div><div class="full"><button class="btn" type="submit">保存资料</button></div></form></section>
+        <section id="tab-skills" class="dashboard-section"><div class="section-head"><div><h2>我的技能</h2><p>编辑、查看或下架已发布技能。</p></div></div><div id="mySkills" class="list"></div></section>
+        <section id="tab-exchanges" class="dashboard-section"><div class="section-head"><div><h2>交换申请</h2><p>处理收到的申请并跟踪双方完成状态。</p></div><select id="exchangeStatus" class="select" style="width:auto"><option value="">全部状态</option><option value="pending">待处理</option><option value="accepted">已接受</option><option value="completed">已完成</option><option value="rejected">已拒绝</option><option value="cancelled">已撤销</option></select></div><div id="exchangeList" class="list"></div></section>
+        <section id="tab-favorites" class="dashboard-section"><h2>我的收藏</h2><div id="favoriteList" class="card-grid"></div></section>
+        <section id="tab-notifications" class="dashboard-section"><div class="section-head"><div><h2>通知中心</h2><p id="notificationSummary"></p></div><button id="readAllButton" class="btn btn-secondary btn-small" type="button">全部已读</button></div><div id="notificationList" class="list"></div></section>
+        <section id="tab-reviews" class="dashboard-section"><h2>我的评价</h2><div id="reviewList" class="list"></div></section>
+      </div>
+    </div>
+  </main>
+
+  <div id="reviewModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="reviewTitle"><div class="modal-card"><div class="modal-head"><h2 id="reviewTitle">发布评价</h2><button id="closeReviewModal" type="button" aria-label="关闭">×</button></div><form id="reviewForm" class="stack"><input id="reviewExchangeId" type="hidden"><div class="field"><label for="reviewRating">评分</label><select class="select" id="reviewRating"><option value="5">5 分，非常满意</option><option value="4">4 分，满意</option><option value="3">3 分，一般</option><option value="2">2 分，有待改进</option><option value="1">1 分，不满意</option></select></div><div class="field"><label for="reviewContent">评价内容</label><textarea class="textarea" id="reviewContent" required minlength="2" maxlength="500"></textarea></div><button class="btn" type="submit">提交评价</button></form></div></div>
+  <footer class="site-footer">课程项目演示 · 24002120509 杨庆鸿 · 个人技能交换平台</footer>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>发布技能 · 技能交换平台</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <script src="/js/app.js" defer></script><script src="/js/skill-form.js" defer></script>
+</head>
+<body>
+  <header class="site-header"><nav class="container nav"><a class="brand" href="/"><span class="brand-mark">EX</span><span>技能交换</span></a><div class="nav-links"><a href="/">发现技能</a><a href="/dashboard.html">个人中心</a><button data-auth-only hidden data-logout>退出</button></div></nav></header>
+  <main class="container section">
+    <div class="section-head"><div><p class="eyebrow">PUBLISH SKILL</p><h1 id="pageTitle">发布技能</h1><p>信息越清晰，越容易找到合适的交换伙伴。</p></div></div>
+    <form id="skillForm" class="panel form-grid">
+      <div class="field"><label for="title">技能标题</label><input class="input" id="title" required minlength="2" maxlength="100"></div>
+      <div class="field"><label for="categoryId">技能分类</label><select class="select" id="categoryId" required></select></div>
+      <div class="field"><label for="type">发布类型</label><select class="select" id="type" required><option value="offer">我掌握，可以分享</option><option value="request">我想学，寻找伙伴</option></select></div>
+      <div class="field"><label for="locationType">交换方式</label><select class="select" id="locationType" required><option value="online">线上</option><option value="offline">线下</option><option value="both">线上线下均可</option></select></div>
+      <div class="field full"><label for="description">详细说明</label><textarea class="textarea" id="description" required minlength="10" maxlength="2000" placeholder="介绍你的水平、交换内容、时间安排和期望"></textarea></div>
+      <div class="field full"><label for="coverUrl">封面 URL（选填）</label><input class="input" id="coverUrl" type="url" placeholder="https://example.com/image.jpg"></div>
+      <div id="formMessage" class="message full" hidden></div>
+      <div class="full"><button class="btn" type="submit">保存技能</button></div>
+    </form>
+  </main>
+  <footer class="site-footer">课程项目演示 · 24002120509 杨庆鸿</footer>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>注册 · 技能交换平台</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <script src="/js/app.js" defer></script><script src="/js/register.js" defer></script>
+</head>
+<body>
+  <header class="site-header"><nav class="container nav"><a class="brand" href="/"><span class="brand-mark">EX</span><span>技能交换</span></a><div class="nav-links"><a href="/">返回首页</a><a href="/login.html">已有账号</a></div></nav></header>
+  <main class="auth-layout">
+    <section class="panel auth-card">
+      <p class="eyebrow">CREATE ACCOUNT</p><h1>加入技能交换</h1><p>创建账号，发布你掌握和想学习的技能。</p>
+      <form id="registerForm" class="stack">
+        <div class="field"><label for="username">用户名</label><input class="input" id="username" name="username" minlength="3" maxlength="50" required></div>
+        <div class="field"><label for="email">邮箱</label><input class="input" id="email" name="email" type="email" required></div>
+        <div class="field"><label for="password">密码</label><input class="input" id="password" name="password" type="password" minlength="6" required></div>
+        <div class="field"><label for="bio">个人简介</label><textarea class="textarea" id="bio" name="bio" maxlength="300" placeholder="介绍你的兴趣和擅长领域"></textarea></div>
+        <div id="formMessage" class="message" hidden></div>
+        <button class="btn btn-block" type="submit">创建账号</button>
+      </form>
+    </section>
+  </main>
+  <footer class="site-footer">课程项目演示 · 24002120509 杨庆鸿</footer>
+</body>
+</html>
