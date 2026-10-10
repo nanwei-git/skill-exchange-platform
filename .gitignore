@@ -1,7 +1,36 @@
+# 依赖
 node_modules/
+
+# 环境变量与敏感信息
 .env
+.env.*
+!.env.example
+
+# 日志
 *.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# 测试 / 构建产物
 coverage/
 output/
+dist/
+build/
+
+# 编辑器 / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 操作系统
 .DS_Store
 Thumbs.db
+Desktop.ini
+
+# 存档与压缩包（避免把交付物误提交）
+*.rar
+*.zip
+*.7z
